@@ -1,0 +1,49 @@
+{
+  "name": "taichi",
+  "version": "0.0.1",
+  "description": "Standard tooling for JS development",
+  "main": "src/index.ts",
+  "scripts": {
+    "lint": "prettier --write --parser typescript \"src/**/*.ts?(x)\"",
+    "dev": "ts-node ./src/index.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "author": "Mimo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/node": "^13.1.6",
+    "@types/webpack": "^4.41.2",
+    "commander": "^4.1.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^4.0.7",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "standard-version": "^7.0.1",
+    "ts-node": "^8.6.1",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "webpack": "^4.41.5"
+  }
+}
