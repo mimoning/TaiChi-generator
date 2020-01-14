@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "declaration": true,
     "isolatedModules": true,
     "target": "ES5",
@@ -9,7 +9,10 @@
     "resolveJsonModule": true,
     "outDir": "./bin/src",
     "noImplicitAny": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
     "src/**/*.ts",

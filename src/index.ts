@@ -1,8 +1,11 @@
-import webpack from 'webpack'
-import config from './config'
+import program from 'commander'
+import build from './webpack/build'
 
-const compiler = webpack(config)
+program
+  .command('build')
+  .description('production mode')
+  .option('-i. --input <inputPath>', 'specified the build entry file path')
+  .option('-t --test <testContent>', 'test')
+  .action(build)
 
-compiler.run((err, stats) => {
-  console.log(err)
-})
+program.parse(process.argv)
