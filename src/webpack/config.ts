@@ -2,7 +2,7 @@ import path from 'path'
 import { Configuration } from 'webpack'
 import merge from 'webpack-merge'
 
-import { WORK_DIR } from './constants/index'
+import { WORK_DIR } from '../constants/index'
 
 function getConfig(
   extra: Configuration = {},
