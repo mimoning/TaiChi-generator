@@ -1,5 +1,8 @@
 import program from 'commander'
 import build from './webpack/build'
+import version from './version'
+
+program.version(version)
 
 program
   .command('build')

@@ -5,7 +5,9 @@
   "main": "src/index.ts",
   "scripts": {
     "lint": "prettier --write --parser typescript \"src/**/*.ts?(x)\"",
-    "try:build": "ts-node ./src/index.ts build --input='./examples/index.js'"
+    "build": "tsc --build",
+    "try": "ts-node ./src/index.ts",
+    "try:build": "npm run build && node ./bin/index.js"
   },
   "husky": {
     "hooks": {

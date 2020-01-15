@@ -3,7 +3,7 @@ import { Configuration } from 'webpack'
 import { ConfigSchema } from '@/typings'
 import { OVERWRITE_JSON_PATH, OVERWRITE_JS_PATH } from '@/constants/index'
 
-function getOverwriteFile(): ConfigSchema {
+function getOverwriteConfig(): ConfigSchema {
   let config: ConfigSchema
   if (fs.existsSync(OVERWRITE_JSON_PATH)) {
     config = JSON.parse(fs.readFileSync(OVERWRITE_JSON_PATH).toString())

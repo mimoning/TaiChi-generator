@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "baseUrl": "./",
-    "declaration": true,
-    "isolatedModules": true,
+    "baseUrl": ".",
+    "outDir": "./bin/src",
     "target": "ES5",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "skipLibCheck": true,
     "module": "CommonJS",
     "resolveJsonModule": true,
-    "outDir": "./bin/src",
-    "noImplicitAny": true,
-    "esModuleInterop": true,
+    "isolatedModules": true,
+    "declaration": true,
     "paths": {
       "@/*": ["src/*"]
     }
