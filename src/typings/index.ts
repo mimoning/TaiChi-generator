@@ -36,3 +36,5 @@ export interface BuildCommandObj {
    */
   input: string
 }
+
+export type BuildMode = 'production' | 'development'
