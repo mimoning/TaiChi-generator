@@ -33,11 +33,13 @@
   "license": "MIT",
   "devDependencies": {
     "@types/commander": "^2.12.2",
+    "@types/html-webpack-plugin": "^3.2.1",
     "@types/mini-css-extract-plugin": "^0.9.0",
     "@types/node": "^13.1.6",
     "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
     "@types/terser-webpack-plugin": "^2.2.0",
     "@types/webpack": "^4.41.2",
+    "@types/webpack-dev-server": "^3.9.0",
     "@types/webpack-manifest-plugin": "^2.1.0",
     "@types/webpack-merge": "^4.1.5",
     "commander": "^4.1.0",
@@ -51,10 +53,12 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "terser-webpack-plugin": "^2.3.2",
     "webpack": "^4.41.5",
+    "webpack-dev-server": "^3.10.1",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-merge": "^4.2.2"
   }
