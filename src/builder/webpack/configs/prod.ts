@@ -1,9 +1,8 @@
 import merge from 'webpack-merge'
 import { Configuration, DefinePlugin } from 'webpack'
-import ManifestPlugin from 'webpack-manifest-plugin'
 import defaultConfig from './base'
 
-const buildConfig: Configuration = {
+const prodConfig: Configuration = {
   mode: 'production',
   plugins: [
     new DefinePlugin({
@@ -14,4 +13,4 @@ const buildConfig: Configuration = {
   ]
 }
 
-export default merge(defaultConfig, buildConfig)
+export default merge(defaultConfig, prodConfig)
