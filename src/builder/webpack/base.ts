@@ -41,7 +41,9 @@ const defaultConfig: Configuration = {
   },
   module: {
     rules: [
+      // js、ts
       { test: JS_REG, exclude: NODE_MODULES_REG, use: ['ts-loader'] },
+      // img
       {
         test: IMAGE_REG,
         use: [
@@ -54,6 +56,7 @@ const defaultConfig: Configuration = {
           }
         ]
       },
+      // css
       {
         test: CSS_REG,
         exclude: CSS_MODULE_REG,
@@ -83,5 +86,8 @@ const defaultConfig: Configuration = {
         ]
       }
     ]
-  }
+  },
+  plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })]
 }
+
+export default defaultConfig
