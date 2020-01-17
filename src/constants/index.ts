@@ -18,9 +18,9 @@ export const DEFAULT_OUTPUT = path.resolve(WORK_DIR, './dist')
 /**
  * js 配置文件路径
  */
-export const OVERWRITE_JS_PATH = path.resolve(WORK_DIR, './overwrite.js')
+export const TJ_CONFIG_JS_PATH = path.resolve(WORK_DIR, './tj.config.js')
 
 /**
  * json 配置文件路径
  */
-export const OVERWRITE_JSON_PATH = path.resolve(WORK_DIR, './overwrite.json')
+export const TJ_CONFIG_JSON_PATH = path.resolve(WORK_DIR, './tj.config.json')
