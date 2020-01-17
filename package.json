@@ -38,6 +38,7 @@
     "@types/optimize-css-assets-webpack-plugin": "^5.0.1",
     "@types/terser-webpack-plugin": "^2.2.0",
     "@types/webpack": "^4.41.2",
+    "@types/webpack-manifest-plugin": "^2.1.0",
     "@types/webpack-merge": "^4.1.5",
     "commander": "^4.1.0",
     "commitizen": "^4.0.3",
@@ -54,6 +55,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "terser-webpack-plugin": "^2.3.2",
     "webpack": "^4.41.5",
+    "webpack-manifest-plugin": "^2.2.0",
     "webpack-merge": "^4.2.2"
   }
 }

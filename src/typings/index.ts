@@ -25,6 +25,10 @@ export interface ConfigSchema {
    * 外部依赖，无需打包的依赖
    */
   externals?: Record<string, string>
+  /**
+   * 资源清单，需要添加到打包出来文件清单中的
+   */
+  manifests?: Record<string, string>
 }
 
 /**
