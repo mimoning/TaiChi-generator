@@ -1,3 +1,5 @@
+import WebpackDevServer from 'webpack-dev-server'
+
 /**
  * 对外的配置对象数据结构
  */
@@ -33,6 +35,10 @@ export interface ConfigSchema {
    * 资源清单，需要添加到打包出来文件清单中的
    */
   manifests?: Record<string, string>
+  /**
+   * devServer 配置
+   */
+  devServer?: WebpackDevServer.Configuration
 }
 
 /**
