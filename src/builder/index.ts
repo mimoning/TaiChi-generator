@@ -13,7 +13,7 @@ const getBuildConfig = (
   webpackConfig: Configuration
 ): Configuration => {
   const baseConfig = mapConfigToWebpackConfig(config)
-  return merge(baseConfig, webpackConfig)
+  return merge(webpackConfig, baseConfig)
 }
 
 const dev = (cfg: ConfigSchema): void => {

@@ -4,7 +4,7 @@ import builder from '../builder'
 
 function build(cmdObj: BuildCommandObj): void {
   // 先将命令行输入的参数与配置项组合
-  const baseConfig = getTJConfig()
+  const baseConfig = getTJConfig() || {}
   if (cmdObj.input) {
     baseConfig.input = cmdObj.input
   }

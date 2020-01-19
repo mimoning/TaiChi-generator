@@ -9,7 +9,9 @@ import WebpackDevServer from 'webpack-dev-server'
 /**
  * 将配置转为 webpack 配置
  */
-export function mapConfigToWebpackConfig(config: ConfigSchema): Configuration {
+export function mapConfigToWebpackConfig(
+  config: ConfigSchema = {}
+): Configuration {
   return {
     entry: config.input || DEFAULT_INPUT,
     output: {
@@ -18,12 +20,13 @@ export function mapConfigToWebpackConfig(config: ConfigSchema): Configuration {
     resolve: {
       alias: config.alias || {}
     },
-    plugins: [
-      config.manifests &&
-        new ManifestPlugin({
-          seed: config.manifests
-        })
-    ],
+    plugins: config.manifests
+      ? [
+          new ManifestPlugin({
+            seed: config.manifests
+          })
+        ]
+      : [],
     externals: config.externals || {},
     devServer: merge.smart(config.devServer, {
       port: config.port
