@@ -51,4 +51,9 @@ export interface BuildCommandObj {
   input: string
 }
 
+export interface DevCommandObj {
+  input: string
+  port: number
+}
+
 export type BuildMode = 'production' | 'development'
