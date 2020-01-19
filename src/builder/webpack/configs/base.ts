@@ -1,8 +1,10 @@
+import path from 'path'
 import { Configuration } from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { getCssLoaders } from './loaders'
+import { WORK_DIR } from '../../../constants'
 
 /**
  * 支持处理的文件类型
@@ -42,13 +44,21 @@ const defaultConfig: Configuration = {
   module: {
     rules: [
       // js、ts
-      { test: JS_REG, exclude: NODE_MODULES_REG, use: ['ts-loader'] },
+      {
+        test: JS_REG,
+        exclude: NODE_MODULES_REG,
+        use: [
+          {
+            loader: require.resolve('ts-loader')
+          }
+        ]
+      },
       // img
       {
         test: IMAGE_REG,
         use: [
           {
-            loader: 'url-loader',
+            loader: require.resolve('url-loader'),
             options: {
               name: 'images/[name].[hash:4].[ext]',
               limit: 2048
@@ -73,7 +83,10 @@ const defaultConfig: Configuration = {
       {
         test: SCSS_REG,
         exclude: SCSS_MODULE_REG,
-        use: [...getCssLoaders({ importLoaders: 2 }), 'scss-loader']
+        use: [
+          ...getCssLoaders({ importLoaders: 2 }),
+          require.resolve('sass-loader')
+        ]
       },
       {
         test: SCSS_MODULE_REG,
@@ -82,7 +95,7 @@ const defaultConfig: Configuration = {
             importLoaders: 2,
             modules: { localIdentName: '[local]-[hash:4]' }
           }),
-          'scss-loader'
+          require.resolve('sass-loader')
         ]
       }
     ]
