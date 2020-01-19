@@ -1,6 +1,6 @@
-import { getTJConfig } from '@/config'
-import { BuildCommandObj } from '@/typings'
-import builder from '@/builder'
+import { getTJConfig } from '../config'
+import { BuildCommandObj } from '../typings'
+import builder from '../builder'
 
 function build(cmdObj: BuildCommandObj): void {
   // 先将命令行输入的参数与配置项组合

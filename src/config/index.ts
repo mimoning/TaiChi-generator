@@ -1,11 +1,11 @@
 import fs from 'fs'
 import path from 'path'
-import { ConfigSchema } from '@/typings'
+import { ConfigSchema } from '../typings'
 import {
   TJ_CONFIG_JSON_PATH,
   TJ_CONFIG_JS_PATH,
   WORK_DIR
-} from '@/constants/index'
+} from '../constants/index'
 
 /**
  * 获取用户输入的配置

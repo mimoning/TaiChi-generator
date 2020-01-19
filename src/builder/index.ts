@@ -1,4 +1,3 @@
-import { ConfigSchema } from '@/typings'
 import webpack, { Configuration } from 'webpack'
 import merge from 'webpack-merge'
 import WebpackDevServer from 'webpack-dev-server'
@@ -7,6 +6,7 @@ import { mapConfigToWebpackConfig } from './webpack/transfer'
 import devConfig from './webpack/configs/dev'
 import prodConfig from './webpack/configs/prod'
 import anlzConfig from './webpack/configs/analyze'
+import { ConfigSchema } from '../typings'
 
 const getBuildConfig = (
   config: ConfigSchema,

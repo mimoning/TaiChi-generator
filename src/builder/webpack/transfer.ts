@@ -1,7 +1,8 @@
-import { DEFAULT_INPUT, DEFAULT_OUTPUT } from '@/constants/index'
 import ManifestPlugin from 'webpack-manifest-plugin'
 import merge from 'webpack-merge'
-import { ConfigSchema } from '@/typings'
+
+import { ConfigSchema } from '../../typings'
+import { DEFAULT_INPUT, DEFAULT_OUTPUT } from '../../constants/index'
 import { Configuration } from 'webpack'
 import WebpackDevServer from 'webpack-dev-server'
 

@@ -12,10 +12,7 @@
     "module": "CommonJS",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "declaration": true,
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "declaration": true
   },
   "include": [
     "src/**/*.ts",
