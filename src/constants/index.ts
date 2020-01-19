@@ -1,3 +1,4 @@
+import fs from 'fs'
 import path from 'path'
 
 /**
@@ -8,7 +9,20 @@ export const WORK_DIR = process.env.PWD
 /**
  * 默认的入口文件路径
  */
-export const DEFAULT_INPUT = path.resolve(WORK_DIR, './src/index.js')
+export const DEFAULT_INPUT = () => {
+  const jsPath = path.resolve(WORK_DIR, './src/index.js')
+  const jsxPath = path.resolve(WORK_DIR, './src/index.jsx')
+  const tsPath = path.resolve(WORK_DIR, './src/index.ts')
+  const tsxPath = path.resolve(WORK_DIR, './src/index.tsx')
+
+  return fs.existsSync(tsPath)
+    ? tsPath
+    : fs.existsSync(tsxPath)
+    ? tsxPath
+    : fs.existsSync(jsPath)
+    ? jsPath
+    : jsxPath
+}
 
 /**
  * 默认的输出文件夹路径

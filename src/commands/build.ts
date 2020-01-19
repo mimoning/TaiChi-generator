@@ -8,6 +8,10 @@ function build(cmdObj: BuildCommandObj): void {
   if (cmdObj.input) {
     baseConfig.input = cmdObj.input
   }
+  if (cmdObj.analyze) {
+    builder.analyze(baseConfig)
+    return
+  }
   builder.prod(baseConfig)
 }
 

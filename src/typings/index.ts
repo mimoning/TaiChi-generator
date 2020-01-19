@@ -49,6 +49,7 @@ export interface BuildCommandObj {
    * 入口文件地址
    */
   input: string
+  analyze: boolean
 }
 
 export interface DevCommandObj {
