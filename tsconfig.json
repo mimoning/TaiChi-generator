@@ -11,8 +11,7 @@
     "skipLibCheck": true,
     "module": "CommonJS",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "declaration": true
+    "isolatedModules": true
   },
   "include": [
     "src/**/*.ts",
