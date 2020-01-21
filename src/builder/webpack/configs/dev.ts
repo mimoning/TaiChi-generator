@@ -1,3 +1,4 @@
+import fs from 'fs'
 import merge from 'webpack-merge'
 import readline from 'readline'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
@@ -7,13 +8,15 @@ import {
   HotModuleReplacementPlugin
 } from 'webpack'
 import { getPkg } from '../../../config'
+import { TPL_PATH } from '../../../constants'
 import defaultConfig from './base'
 
 const devConfig: Configuration = {
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
-      title: getPkg().name
+      title: getPkg().name,
+      ...(fs.existsSync(TPL_PATH) ? { template: TPL_PATH } : {})
     }),
     // 进度插件
     new ProgressPlugin((percentage, msg) => {

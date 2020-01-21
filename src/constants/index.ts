@@ -7,6 +7,14 @@ import path from 'path'
 export const WORK_DIR = process.env.PWD
 
 /**
+ * 判断输入的相对路径在工作文件夹是否能找到
+ */
+export const existsSyncInWorkDir = (p: string): boolean => {
+  const absolutePath = path.resolve(WORK_DIR, p)
+  return fs.existsSync(absolutePath)
+}
+
+/**
  * 默认的入口文件路径
  */
 export const DEFAULT_INPUT = () => {
@@ -38,3 +46,8 @@ export const TJ_CONFIG_JS_PATH = path.resolve(WORK_DIR, './tj.config.js')
  * json 配置文件路径
  */
 export const TJ_CONFIG_JSON_PATH = path.resolve(WORK_DIR, './tj.config.json')
+
+/**
+ * 默认的 html 路径
+ */
+export const TPL_PATH = path.resolve(WORK_DIR, './index.html')
