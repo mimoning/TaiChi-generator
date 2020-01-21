@@ -5,7 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
  * 获取 css loader
  */
 export function getCssLoaders(cssOptions?: RuleSetQuery): RuleSetUseItem[] {
-  let options =
+  const options =
     typeof cssOptions === 'string'
       ? cssOptions
       : { importLoaders: 1, ...cssOptions }
@@ -13,9 +13,22 @@ export function getCssLoaders(cssOptions?: RuleSetQuery): RuleSetUseItem[] {
   return [
     MiniCssExtractPlugin.loader,
     {
-      loader: 'css-loader',
+      loader: require.resolve('css-loader'),
       options
     },
-    'postcss-loader'
+    {
+      loader: require.resolve('postcss-loader'),
+      options: {
+        plugins: () => [
+          require('postcss-flexbugs-fixes'),
+          require('postcss-preset-env')({
+            autoprefixer: {
+              remove: false
+            },
+            stage: false
+          })
+        ]
+      }
+    }
   ]
 }

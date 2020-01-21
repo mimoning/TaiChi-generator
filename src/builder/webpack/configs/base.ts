@@ -1,10 +1,8 @@
-import path from 'path'
 import { Configuration } from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { getCssLoaders } from './loaders'
-import { WORK_DIR } from '../../../constants'
 
 /**
  * 支持处理的文件类型
