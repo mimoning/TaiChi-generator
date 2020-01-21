@@ -34,7 +34,13 @@ export interface ConfigSchema {
   /**
    * 资源清单，需要添加到打包出来文件清单中的
    */
-  manifests?: Record<string, string>
+  manifests?: boolean | Record<string, string>
+  /**
+   * @description 构建时是否使用模板，如果不指定，则开发模式下使用项目根目录的 html 文件或 html-webpack-plugin 默认生成的 html 文件
+   * @type {string} 模板地址
+   * @type {boolean} 使用 html-webpack-plugin 生成的默认模板
+   */
+  template?: string
   /**
    * devServer 配置
    */
