@@ -9,7 +9,7 @@ function serve(cmdObj: DevCommandObj): void {
     baseConfig.input = cmdObj.input
   }
   if (cmdObj.port) {
-    baseConfig.port = cmdObj.port
+    baseConfig.port = parseInt(cmdObj.port)
   }
   builder.dev(baseConfig)
 }

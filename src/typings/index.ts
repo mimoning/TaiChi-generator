@@ -60,7 +60,7 @@ export interface BuildCommandObj {
 
 export interface DevCommandObj {
   input: string
-  port: number
+  port: string
 }
 
 export type BuildMode = 'production' | 'development'

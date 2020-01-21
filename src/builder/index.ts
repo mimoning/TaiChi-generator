@@ -1,6 +1,7 @@
 import webpack, { Configuration } from 'webpack'
 import merge from 'webpack-merge'
 import WebpackDevServer from 'webpack-dev-server'
+import getPort from 'get-port'
 
 import { mapConfigToWebpackConfig } from './webpack/transfer'
 import devConfig from './webpack/configs/dev'
@@ -16,7 +17,7 @@ const getBuildConfig = (
   return merge(webpackConfig, baseConfig)
 }
 
-const dev = (cfg: ConfigSchema): void => {
+const dev = async (cfg: ConfigSchema): Promise<void> => {
   const config = getBuildConfig(cfg, devConfig)
   const compiler = webpack(config)
   const devServerOptions = Object.assign({}, config.devServer, {
@@ -28,8 +29,12 @@ const dev = (cfg: ConfigSchema): void => {
 
   const server = new WebpackDevServer(compiler, devServerOptions)
 
-  server.listen(devServerOptions.port, () => {
-    console.log(`Starting server on http://localhost:${devServerOptions.port}`)
+  const availablePort = await getPort({
+    port: getPort.makeRange(devServerOptions.port, devServerOptions.port + 100)
+  })
+
+  server.listen(availablePort, () => {
+    console.log(`Starting server on http://localhost:${availablePort}`)
   })
 }
 
