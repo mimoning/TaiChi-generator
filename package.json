@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Standard tooling for JS development",
   "main": "src/index.ts",
+  "files": [
+    "bin"
+  ],
   "bin": {
     "taichi": "./bin/index.js"
   },
@@ -11,7 +14,8 @@
     "build": "tsc --build",
     "try": "ts-node ./src/index.ts",
     "try:build": "npm run build && node ./bin/index.js",
-    "release": "standard-version"
+    "release": "standard-version",
+    "publish": "npm login && npm run build && npm publish"
   },
   "husky": {
     "hooks": {
