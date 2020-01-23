@@ -10,7 +10,8 @@
     "lint": "prettier --write --parser typescript \"src/**/*.ts?(x)\"",
     "build": "tsc --build",
     "try": "ts-node ./src/index.ts",
-    "try:build": "npm run build && node ./bin/index.js"
+    "try:build": "npm run build && node ./bin/index.js",
+    "release": "standard-version"
   },
   "husky": {
     "hooks": {
