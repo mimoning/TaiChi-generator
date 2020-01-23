@@ -8,6 +8,9 @@ function build(cmdObj: BuildCommandObj): void {
   if (cmdObj.input) {
     baseConfig.input = cmdObj.input
   }
+  if (cmdObj.output) {
+    baseConfig.output = cmdObj.output
+  }
   if (cmdObj.analyze) {
     builder.analyze(baseConfig)
     return

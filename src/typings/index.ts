@@ -56,6 +56,10 @@ export interface BuildCommandObj {
    */
   input: string
   analyze: boolean
+  /**
+   * 输出地址
+   */
+  output: string
 }
 
 export interface DevCommandObj {

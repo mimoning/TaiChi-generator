@@ -9,6 +9,7 @@ program
   .command('build')
   .description('production mode')
   .option('-i, --input <inputPath>', 'specified the build entry file path')
+  .option('-o, --output <outputPath>', 'specified the build output file path')
   .option('-a, --analyze', 'the analyze mode')
   .action(build)
 
