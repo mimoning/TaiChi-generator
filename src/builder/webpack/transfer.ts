@@ -17,6 +17,7 @@ export function mapConfigToWebpackConfig(
   config: ConfigSchema = {}
 ): Configuration {
   const plugins: Plugin[] = []
+  let alias: Record<string, string> = {}
 
   if (config.manifests) {
     const seed = typeof config.manifests === 'boolean' ? {} : config.manifests
@@ -34,13 +35,19 @@ export function mapConfigToWebpackConfig(
     plugins.push(new HtmlWebpackPlugin(tplConfig))
   }
 
+  if (config.alias) {
+    Object.keys(config.alias).forEach(k => {
+      alias[k] = path.resolve(WORK_DIR, config.alias[k])
+    })
+  }
+
   return {
     entry: config.input || DEFAULT_INPUT,
     output: {
       path: config.output || DEFAULT_OUTPUT
     },
     resolve: {
-      alias: config.alias || {}
+      alias
     },
     plugins,
     externals: config.externals || {},
