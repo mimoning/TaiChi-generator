@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/mimoning/TaiChi-generator/compare/v0.0.2...v0.0.3) (2020-04-03)
+
+
+### Bug Fixes
+
+* **style:** 修复打包进 js 中的 css 失效的问题 ([70ded00](https://github.com/mimoning/TaiChi-generator/commit/70ded008b6433da850b2c3d38bc1d48879323d09))
+
 ### [0.0.2](https://github.com/mimoning/TaiChi-generator/compare/v0.0.1...v0.0.2) (2020-04-03)
 
 
