@@ -36,6 +36,8 @@ export function getCssLoaders(
 
   if (extract) {
     result.unshift(MiniCssExtractPlugin.loader)
+  } else {
+    result.unshift(require.resolve('style-loader'))
   }
 
   return result
