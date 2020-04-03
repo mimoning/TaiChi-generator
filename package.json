@@ -1,6 +1,6 @@
 {
   "name": "taichi-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Standard tooling for JS development",
   "main": "src/index.ts",
   "files": [

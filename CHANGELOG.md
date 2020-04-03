@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/mimoning/TaiChi-generator/compare/v0.0.1...v0.0.2) (2020-04-03)
+
+
+### Features
+
+* **css:** 添加 extractCss 配置项, 配置 css 是否需要被分离打包 ([6b36acc](https://github.com/mimoning/TaiChi-generator/commit/6b36acc4d4195c4c41ac330903d55b24bb57facf))
+
+
+### Bug Fixes
+
+* **alias:** 修正 alias, 支持处理工作目录内相对路径 ([2927338](https://github.com/mimoning/TaiChi-generator/commit/29273380b8024f278b101ddbaa656cab64f19ebe))
+* **typescript:** 将 typescript 添加到 dependency 里面 ([c6f361a](https://github.com/mimoning/TaiChi-generator/commit/c6f361a211880a6ec3c3cd62dbe23f0b2f626e3f))
+
 ### 0.0.1 (2020-01-23)
 
 
