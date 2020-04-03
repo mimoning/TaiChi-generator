@@ -45,6 +45,11 @@ export interface ConfigSchema {
    * devServer 配置
    */
   devServer?: WebpackDevServer.Configuration
+  /**
+   * 是否将 css 分离打包
+   * @default true
+   */
+  extractCss?: boolean
 }
 
 /**

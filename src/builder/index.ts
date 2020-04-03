@@ -8,13 +8,15 @@ import devConfig from './webpack/configs/dev'
 import prodConfig from './webpack/configs/prod'
 import anlzConfig from './webpack/configs/analyze'
 import { ConfigSchema } from '../typings'
+import getCssConfigs from './webpack/css'
 
 const getBuildConfig = (
   config: ConfigSchema,
   webpackConfig: Configuration
 ): Configuration => {
   const baseConfig = mapConfigToWebpackConfig(config)
-  return merge(webpackConfig, baseConfig)
+  const cssConfig = getCssConfigs({ extract: config.extractCss })
+  return merge(webpackConfig, baseConfig, cssConfig)
 }
 
 const dev = async (cfg: ConfigSchema): Promise<void> => {
