@@ -15,7 +15,7 @@
     "try": "ts-node ./src/index.ts",
     "try:build": "npm run build && node ./bin/index.js",
     "release": "standard-version",
-    "publish": "npm login && npm run build && npm publish"
+    "pub": "npm login && npm run build && npm publish"
   },
   "husky": {
     "hooks": {
