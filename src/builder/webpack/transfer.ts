@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs'
-import { Configuration, Plugin } from 'webpack'
+import { Configuration, Plugin, Output } from 'webpack'
 import ManifestPlugin from 'webpack-manifest-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import WebpackDevServer from 'webpack-dev-server'
@@ -18,6 +18,9 @@ export function mapConfigToWebpackConfig(
 ): Configuration {
   const plugins: Plugin[] = []
   let alias: Record<string, string> = {}
+  const output: Output = {
+    path: config.output || DEFAULT_OUTPUT
+  }
 
   if (config.manifests) {
     const seed = typeof config.manifests === 'boolean' ? {} : config.manifests
@@ -41,11 +44,13 @@ export function mapConfigToWebpackConfig(
     })
   }
 
+  if (config.chunk) {
+    output.chunkFilename = config.chunk
+  }
+
   return {
     entry: config.input || DEFAULT_INPUT,
-    output: {
-      path: config.output || DEFAULT_OUTPUT
-    },
+    output,
     resolve: {
       alias
     },

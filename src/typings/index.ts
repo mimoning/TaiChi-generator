@@ -20,7 +20,11 @@ export interface ConfigSchema {
    */
   output?: string
   /**
-   * 构建输出是否需要添加 chunk，并指定 chunk 名称
+   * 指定 chunk 输出的名称\
+   * 需要配合 **import()** 使用
+   * @description 如果使用 typescript，请确保 tsconfig.json 中设置如下:
+   * "removeComments": false -- 此项默认为 false，如并未设置可忽略
+   * "module": "esnext" -- 如果设置成 "commonjs" 则会导致失效
    */
   chunk?: string
   /**

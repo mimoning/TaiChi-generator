@@ -41,6 +41,9 @@ const defaultConfig: Configuration = {
         exclude: NODE_MODULES_REG,
         use: [
           {
+            loader: require.resolve('babel-loader')
+          },
+          {
             loader: require.resolve('ts-loader')
           }
         ]
