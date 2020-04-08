@@ -42,7 +42,6 @@ const dev = async (cfg: ConfigSchema): Promise<void> => {
 
 const prod = (cfg: ConfigSchema): void => {
   const config = getBuildConfig(cfg, prodConfig)
-  console.log(config.output)
   const compiler = webpack(config)
   compiler.run((err, stats) => {
     if (err) {
