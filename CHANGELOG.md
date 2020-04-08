@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/mimoning/TaiChi-generator/compare/v0.0.3...v0.0.4) (2020-04-08)
+
+
+### Bug Fixes
+
+* **chunk:** 添补对 chunk 的支持, 并添加了 babel-loader ([b52a3cc](https://github.com/mimoning/TaiChi-generator/commit/b52a3cc9bfc14827ca2d0a9ca4f2ae38c4851a24))
+* **pkg:** 修改发布命令 ([e8e8e87](https://github.com/mimoning/TaiChi-generator/commit/e8e8e871dbce54d0713f7d03526ee1a08c9fd452))
+
 ### [0.0.3](https://github.com/mimoning/TaiChi-generator/compare/v0.0.2...v0.0.3) (2020-04-03)
 
 
