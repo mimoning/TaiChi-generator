@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/mimoning/TaiChi-generator/compare/v0.0.4...v0.0.5) (2020-07-08)
+
+
+### Features
+
+* **output:** 支持自定义输出 ([d65d6b4](https://github.com/mimoning/TaiChi-generator/commit/d65d6b4b369c2add34da2dc8467c91172c8598cf))
+
 ### [0.0.4](https://github.com/mimoning/TaiChi-generator/compare/v0.0.3...v0.0.4) (2020-04-08)
 
 
