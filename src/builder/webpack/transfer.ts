@@ -18,8 +18,14 @@ export function mapConfigToWebpackConfig(
 ): Configuration {
   const plugins: Plugin[] = []
   let alias: Record<string, string> = {}
+
+  // output
+  const outputPath =
+    typeof config.output === 'object' ? config.output.path : config.output
+  const outputOthers = typeof config.output === 'object' ? config.output : {}
   const output: Output = {
-    path: config.output || DEFAULT_OUTPUT
+    path: outputPath || DEFAULT_OUTPUT,
+    ...outputOthers
   }
 
   if (config.manifests) {
