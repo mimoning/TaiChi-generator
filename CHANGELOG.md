@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/mimoning/TaiChi-generator/compare/v0.0.5...v0.0.6) (2020-08-10)
+
+
+### Bug Fixes
+
+* **windows:** 适配 windows 下 process.env.PWD 返回 undefined 的问题 ([b3dfb70](https://github.com/mimoning/TaiChi-generator/commit/b3dfb70367808c1b96ba199156e70a403d76643f))
+
 ### [0.0.5](https://github.com/mimoning/TaiChi-generator/compare/v0.0.4...v0.0.5) (2020-07-08)
 
 
