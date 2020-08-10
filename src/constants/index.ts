@@ -4,7 +4,7 @@ import path from 'path'
 /**
  * 当前工作文件夹路径
  */
-export const WORK_DIR = process.env.PWD || (process.env.cwd as any)()
+export const WORK_DIR = process.env.PWD || process.cwd()
 
 /**
  * 判断输入的相对路径在工作文件夹是否能找到
