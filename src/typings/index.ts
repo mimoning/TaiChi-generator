@@ -1,5 +1,5 @@
 import WebpackDevServer from 'webpack-dev-server'
-import { Output } from 'webpack'
+import Webpack from 'webpack'
 
 /**
  * 对外的配置对象数据结构
@@ -21,7 +21,7 @@ export interface ConfigSchema {
    * @type {string} 直接指定输出 path
    * @type {Output} 继承 webpack 配置，自定义输出
    */
-  output?: string | Output
+  output?: string | Webpack.Configuration['output']
   /**
    * 指定 chunk 输出的名称\
    * 需要配合 **import()** 使用

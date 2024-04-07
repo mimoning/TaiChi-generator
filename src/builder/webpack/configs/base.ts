@@ -1,6 +1,6 @@
 import { Configuration } from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 
 /**
  * 支持处理的文件类型
@@ -16,7 +16,7 @@ const defaultConfig: Configuration = {
   entry: {},
   output: {
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].js',
   },
   optimization: {
     minimize: true,
@@ -25,13 +25,13 @@ const defaultConfig: Configuration = {
        * This plugin uses terser to minify your JavaScript.
        */
       new TerserPlugin({
-        extractComments: false
+        extractComments: false,
       }),
-      new OptimizeCSSAssetsPlugin()
-    ]
+      new CssMinimizerPlugin(),
+    ],
   },
   resolve: {
-    extensions: EXT_SUPPORT
+    extensions: EXT_SUPPORT,
   },
   module: {
     rules: [
@@ -41,12 +41,12 @@ const defaultConfig: Configuration = {
         exclude: NODE_MODULES_REG,
         use: [
           {
-            loader: require.resolve('babel-loader')
+            loader: require.resolve('babel-loader'),
           },
           {
-            loader: require.resolve('ts-loader')
-          }
-        ]
+            loader: require.resolve('ts-loader'),
+          },
+        ],
       },
       // img
       {
@@ -56,13 +56,13 @@ const defaultConfig: Configuration = {
             loader: require.resolve('url-loader'),
             options: {
               name: 'images/[name].[hash:4].[ext]',
-              limit: 2048
-            }
-          }
-        ]
-      }
-    ]
-  }
+              limit: 2048,
+            },
+          },
+        ],
+      },
+    ],
+  },
 }
 
 export default defaultConfig

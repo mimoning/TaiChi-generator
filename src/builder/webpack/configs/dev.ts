@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import {
   Configuration,
   ProgressPlugin,
-  HotModuleReplacementPlugin
+  HotModuleReplacementPlugin,
 } from 'webpack'
 import { getPkg } from '../../../config'
 import { TPL_PATH } from '../../../constants'
@@ -16,7 +16,7 @@ const devConfig: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       title: getPkg().name,
-      ...(fs.existsSync(TPL_PATH) ? { template: TPL_PATH } : {})
+      ...(fs.existsSync(TPL_PATH) ? { template: TPL_PATH } : {}),
     }),
     // 进度插件
     new ProgressPlugin((percentage, msg) => {
@@ -31,14 +31,14 @@ const devConfig: Configuration = {
         readline.clearLine(stream, 1)
       }
     }),
-    new HotModuleReplacementPlugin()
+    new HotModuleReplacementPlugin(),
   ],
   devServer: {
     hot: true,
     port: 3000,
-    disableHostCheck: true,
-    historyApiFallback: true
-  }
+    allowedHosts: 'all',
+    historyApiFallback: true,
+  },
 }
 
 export default merge(defaultConfig, devConfig)

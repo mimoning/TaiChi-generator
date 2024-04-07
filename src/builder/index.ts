@@ -1,7 +1,6 @@
 import webpack, { Configuration } from 'webpack'
 import merge from 'webpack-merge'
 import WebpackDevServer from 'webpack-dev-server'
-import getPort from 'get-port'
 
 import { mapConfigToWebpackConfig } from './webpack/transfer'
 import devConfig from './webpack/configs/dev'
@@ -12,7 +11,7 @@ import getCssConfigs from './webpack/css'
 
 const getBuildConfig = (
   config: ConfigSchema,
-  webpackConfig: Configuration
+  webpackConfig: Configuration,
 ): Configuration => {
   const baseConfig = mapConfigToWebpackConfig(config)
   const cssConfig = getCssConfigs({ extract: config.extractCss })
@@ -25,19 +24,21 @@ const dev = async (cfg: ConfigSchema): Promise<void> => {
   const devServerOptions = Object.assign({}, config.devServer, {
     open: true,
     stats: {
-      colors: true
-    }
+      colors: true,
+    },
   })
 
   const server = new WebpackDevServer(compiler, devServerOptions)
 
-  const availablePort = await getPort({
-    port: getPort.makeRange(devServerOptions.port, devServerOptions.port + 100)
-  })
+  server.options.onListening = (devServer: WebpackDevServer) => {
+    if (!devServer) {
+      throw new Error('webpack-dev-server is not defined')
+    }
+    const port = (devServer.server.address() as any).port
+    console.log(`Listening on port: ${port}`)
+  }
 
-  server.listen(availablePort, () => {
-    console.log(`Starting server on http://localhost:${availablePort}`)
-  })
+  server.start()
 }
 
 const prod = (cfg: ConfigSchema): void => {
@@ -51,8 +52,8 @@ const prod = (cfg: ConfigSchema): void => {
     console.log(
       stats.toString({
         chunks: false, // 使构建过程更静默无输出
-        colors: true // 在控制台展示颜色
-      })
+        colors: true, // 在控制台展示颜色
+      }),
     )
   })
 }
@@ -68,8 +69,8 @@ const analyze = (cfg: ConfigSchema): void => {
     console.log(
       stats.toString({
         chunks: false, // 使构建过程更静默无输出
-        colors: true // 在控制台展示颜色
-      })
+        colors: true, // 在控制台展示颜色
+      }),
     )
   })
 }
@@ -77,5 +78,5 @@ const analyze = (cfg: ConfigSchema): void => {
 export default {
   dev,
   prod,
-  analyze
+  analyze,
 }

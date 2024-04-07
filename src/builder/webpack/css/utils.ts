@@ -1,12 +1,12 @@
-import { RuleSetQuery, RuleSetUseItem } from 'webpack'
+import { RuleSetUse, RuleSetUseItem } from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 /**
  * 获取 css loader
  */
 export function getCssLoaders(
-  cssOptions: RuleSetQuery,
-  extract: boolean
+  cssOptions: any,
+  extract: boolean,
 ): RuleSetUseItem[] {
   const options =
     typeof cssOptions === 'string'
@@ -16,7 +16,7 @@ export function getCssLoaders(
   const result: RuleSetUseItem[] = [
     {
       loader: require.resolve('css-loader'),
-      options
+      options,
     },
     {
       loader: require.resolve('postcss-loader'),
@@ -25,13 +25,13 @@ export function getCssLoaders(
           require('postcss-flexbugs-fixes'),
           require('postcss-preset-env')({
             autoprefixer: {
-              remove: false
+              remove: false,
             },
-            stage: false
-          })
-        ]
-      }
-    }
+            stage: false,
+          }),
+        ],
+      },
+    },
   ]
 
   if (extract) {

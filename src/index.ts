@@ -1,7 +1,9 @@
-import program from 'commander'
+import { Command } from 'commander'
 import build from './commands/build'
 import serve from './commands/serve'
 import version from './version'
+
+const program = new Command()
 
 program.version(version)
 
