@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/mimoning/TaiChi-generator/compare/v1.0.1...v1.0.2) (2024-04-07)
+
+
+### Bug Fixes
+
+* **postcss-loader:** ajust config update ([778e756](https://github.com/mimoning/TaiChi-generator/commit/778e75679e93cb71f9326c26378835a447fdc8bc))
+
 ### [1.0.1](https://github.com/mimoning/TaiChi-generator/compare/v1.0.0...v1.0.1) (2024-04-07)
 
 
