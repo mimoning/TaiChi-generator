@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/mimoning/TaiChi-generator/compare/v1.0.0...v1.0.1) (2024-04-07)
+
+
+### Bug Fixes
+
+* **dev:** fix dev server error ([785300e](https://github.com/mimoning/TaiChi-generator/commit/785300e67f6126b2d86af31a59eb58999419b18a))
+
 ## [1.0.0](https://github.com/mimoning/TaiChi-generator/compare/v0.0.6...v1.0.0) (2024-04-07)
 
 
