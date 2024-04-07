@@ -21,15 +21,17 @@ export function getCssLoaders(
     {
       loader: require.resolve('postcss-loader'),
       options: {
-        plugins: () => [
-          require('postcss-flexbugs-fixes'),
-          require('postcss-preset-env')({
-            autoprefixer: {
-              remove: false,
-            },
-            stage: false,
-          }),
-        ],
+        postcssOptions: {
+          plugins: () => [
+            require('postcss-flexbugs-fixes'),
+            require('postcss-preset-env')({
+              autoprefixer: {
+                remove: false,
+              },
+              stage: false,
+            }),
+          ],
+        }
       },
     },
   ]
