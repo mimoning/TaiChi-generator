@@ -23,12 +23,9 @@ const dev = async (cfg: ConfigSchema): Promise<void> => {
   const compiler = webpack(config)
   const devServerOptions = Object.assign({}, config.devServer, {
     open: true,
-    stats: {
-      colors: true,
-    },
   })
 
-  const server = new WebpackDevServer(compiler, devServerOptions)
+  const server = new WebpackDevServer(devServerOptions, compiler)
 
   server.options.onListening = (devServer: WebpackDevServer) => {
     if (!devServer) {
