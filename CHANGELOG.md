@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/mimoning/TaiChi-generator/compare/v1.0.2...v1.0.3) (2024-04-08)
+
+
+### Bug Fixes
+
+* **ext:** support more file types ([dac7d89](https://github.com/mimoning/TaiChi-generator/commit/dac7d893b9d19bbd43fb334c034729be9acb9866))
+
 ### [1.0.2](https://github.com/mimoning/TaiChi-generator/compare/v1.0.1...v1.0.2) (2024-04-07)
 
 
