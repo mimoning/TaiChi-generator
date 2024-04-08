@@ -63,6 +63,10 @@ export function mapConfigToWebpackConfig(
     output,
     resolve: {
       alias,
+      extensions: config.extraExts,
+    },
+    module: {
+      rules: config.extraRules || [],
     },
     plugins,
     externals: config.externals || {},

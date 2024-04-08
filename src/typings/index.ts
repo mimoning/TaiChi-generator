@@ -1,5 +1,5 @@
 import WebpackDevServer from 'webpack-dev-server'
-import Webpack from 'webpack'
+import Webpack, { RuleSetRule } from 'webpack'
 
 /**
  * 对外的配置对象数据结构
@@ -57,6 +57,14 @@ export interface ConfigSchema {
    * @default true
    */
   extractCss?: boolean
+  /**
+   * 额外需要支持的文件类型
+   */
+  extraExts?: string[]
+  /**
+   * 额外的文件类型相应的 loader
+   */
+  extraRules?: RuleSetRule[]
 }
 
 /**

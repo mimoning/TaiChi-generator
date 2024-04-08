@@ -5,7 +5,7 @@ import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 /**
  * 支持处理的文件类型
  */
-const EXT_SUPPORT = ['.ts', '.tsx', '.js', '.jsx', '.json', '.scss']
+const EXT_SUPPORT = ['.ts', '.tsx', '.js', '.jsx', '.json', '.scss', '.sass']
 
 // regs
 const NODE_MODULES_REG = /node_modules/
